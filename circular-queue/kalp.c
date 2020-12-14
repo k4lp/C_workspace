@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<SDL2/SDL.h>
 
 typedef struct _node {
 	int size,front,rear,*q;
