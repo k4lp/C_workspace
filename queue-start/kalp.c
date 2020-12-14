@@ -66,6 +66,6 @@ int main() {
 	dequeue();
 	display();
 	dequeue();
-	dequeue();
+	dequeue();// will result into a failed dequeue operation because of empty queue.
 	return 0;
 }
