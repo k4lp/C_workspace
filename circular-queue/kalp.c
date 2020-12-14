@@ -1,0 +1,8 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct _node {
+	int size,front,rear,*q;
+} node;
+
+node *pu;
