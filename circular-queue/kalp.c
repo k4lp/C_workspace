@@ -22,3 +22,12 @@ int isempty() {
 int isfull() {
 	return ((pu->rear + 1) % pu->size == pu->front);
 }
+
+void enqueue(int x) {
+	if(isfull())
+		return;
+	else {
+		pu->rear = (pu->rear +1) % pu->size;
+		pu->q[pu->rear] = x;
+	}
+}
