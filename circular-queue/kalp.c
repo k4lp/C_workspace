@@ -27,7 +27,34 @@ void enqueue(int x) {
 	if(isfull())
 		return;
 	else {
-		pu->rear = (pu->rear +1) % pu->size;
-		pu->q[pu->rear] = x;
+		pu->q[pu->rear=(pu->rear +1) % pu->size] = x;
 	}
+}
+
+int dequeue() {
+	if(isempty())
+		return '$';
+	else {
+		return pu->q[ pu->front = (pu->front + 1) % pu->size];
+	}
+}
+
+void display() {
+	if(isempty())
+		return;
+	else {
+		for( int i = pu->front + 1; i != (pu->rear +1)%pu->size ; i = ( i +1) % pu->size)
+			printf("\n %d",pu->q[i]);
+	}
+}
+
+int main() {
+	initialize();
+	enqueue(4);
+	display();
+	enqueue(5);
+	display();
+	dequeue();
+	display();
+	return 0;
 }

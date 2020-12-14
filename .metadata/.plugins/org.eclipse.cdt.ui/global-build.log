@@ -1,15 +1,15 @@
-01:51:16 **** Incremental Build of configuration Debug for project queue-start ****
+02:49:00 **** Incremental Build of configuration Debug for project circular-queue ****
 make all 
 Building file: ../kalp.c
 Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"kalp.d" -MT"kalp.o" -o "kalp.o" "../kalp.c"
 Finished building: ../kalp.c
  
-Building target: queue-start
+Building target: circular-queue
 Invoking: GCC C Linker
-gcc  -o "queue-start" ./kalp.o   
-Finished building target: queue-start
+gcc  -o "circular-queue" ./kalp.o   
+Finished building target: circular-queue
  
-01:51:17 **** Incremental Build of configuration Debug for project queue-start ****
+02:49:02 **** Incremental Build of configuration Debug for project circular-queue ****
 make all 
 make: Nothing to be done for 'all'.
