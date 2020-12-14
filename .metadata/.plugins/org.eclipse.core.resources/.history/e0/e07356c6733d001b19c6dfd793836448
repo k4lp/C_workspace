@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct _node {
+	int size,front,rear,*q;
+
+} node;
+
+node *pu;
+
+void initialize() {
+	pu = (node*)malloc(sizeof(node));
+	printf("\nEnter the size of the queue :- ");
+	scanf(" %d",&pu->size);
+	pu->q = (int *)malloc(sizeof(int)*pu->size);
+	pu->front = pu->rear = -1;
+}
+
+int isfull() {
+	return (pu->rear == pu->size-1);
+}
+
+int isempty() {
+	return (pu->rear == pu->front);
+}
+
+int dequeue() {
+	if(isempty())
+		return -1;
+	else
+		return pu->q[pu->front++];
+}
+
+void display() {
+	if(isempty())
+		return;
+	else {
+		for(int i = pu->front + 1 ; i <= pu->rear ; i ++)
+			printf("\n%d",pu->q[i]);
+	}
+}
+
+void enqueue(int x) {
+	if(isfull())
+		return;
+	else {
+		pu->q[++pu->rear]= x;
+	}
+}
+
+int main() {
+	initialize();
+	enqueue(12);
+	display();
+	enqueue(127);
+	display();
+	dequeue();
+	display();
+	return 0;
+}

@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+
+#define SIZE 100
+
+typedef struct _node {
+	char data[SIZE];
+	int top;
+} node;
+
+node *pu;
+
+void initialize() {
+	pu = (node *)malloc(sizeof(node));
+	pu->top = -1;
+}
+
+int isempty() {
+	return (pu->top == -1);
+}
+
+void push(char x) {
+	if(pu->top == SIZE - 1)
+		return;
+	else
+		pu->data[++pu->top] = x;
+}
+
+char pop() {
+	return pu->data[pu->top--];
+}
+
+char peek() {
+	return pu->data[pu->top];
+}

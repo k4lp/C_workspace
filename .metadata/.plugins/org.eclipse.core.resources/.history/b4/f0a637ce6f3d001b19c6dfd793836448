@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct _node {
+	int size,front,rear,*q;
+
+} node;
+
+node *pu;
+
+void initialize() {
+	pu = (node*)malloc(sizeof(node));
+	printf("\nEnter the size of the queue :- ");
+	scanf(" %d",&pu->size);
+	pu->q = (int *)malloc(sizeof(int)*pu->size);
+}

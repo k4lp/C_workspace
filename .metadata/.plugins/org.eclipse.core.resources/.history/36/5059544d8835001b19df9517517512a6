@@ -1,0 +1,77 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+
+#define SIZE 100
+
+typedef struct _node {
+	char data[SIZE];
+	int top;
+} node;
+
+node *pu;
+
+void initialize() {
+	pu = (node *)malloc(sizeof(node));
+	pu->top = -1;
+}
+
+int isempty() {
+	return (pu->top == -1);
+}
+
+void push(char x) {
+	if(pu->top == SIZE - 1)
+		return;
+	else
+		pu->data[++pu->top] = x;
+}
+
+char pop() {
+	return pu->data[pu->top--];
+}
+
+char peek() {
+	return pu->data[pu->top];
+}
+
+int paranthesis( char *exp) {
+	int i=0;
+	for( ; exp[i]!='\0';i++) {
+		if(exp[i] == '(')
+			push(exp[i]);
+		else if(exp[i] == ')') {
+			if(isempty())
+				return 0;
+			else
+				pop();
+		}
+	}
+	if(isempty()) {
+		return 1;
+	}
+	else
+		return 0;
+}
+
+int precedence(char x) {
+	if(x == '+' || x == '-')
+		return 1;
+	else if( x == '*' || x == '/')
+		return 2;
+	else if( x == '^')
+		return 3;
+	else if(isalpha(x))
+		return 4;
+	else
+		return 9;
+}
+
+void intopost(char *exp, char *post) {
+	int i=0,j=0;
+	initialize();
+	for( ; exp[i] != '\0'; i++) {
+		if(isempty())
+			push(exp[i]);
+	}
+}

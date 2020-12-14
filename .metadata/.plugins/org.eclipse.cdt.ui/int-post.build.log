@@ -1,0 +1,15 @@
+01:51:27 **** Incremental Build of configuration Debug for project int-post ****
+make all 
+Building file: ../kalp.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"kalp.d" -MT"kalp.o" -o "kalp.o" "../kalp.c"
+Finished building: ../kalp.c
+ 
+Building target: int-post
+Invoking: GCC C Linker
+gcc  -o "int-post" ./kalp.o   
+Finished building target: int-post
+ 
+
+01:51:28 Build Finished. 0 errors, 0 warnings. (took 570ms)
+

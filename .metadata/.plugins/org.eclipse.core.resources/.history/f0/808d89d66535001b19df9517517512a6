@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+
+#define SIZE 100
+
+typedef struct _node {
+	char data[SIZE];
+	int top;
+} node;
+
+node *pu;
+
+void initialize() {
+	pu = (node *)malloc(sizeof(node));
+	pu->top = -1;
+}
+
+int isempty() {
+	return (pu->top == -1);
+}
+
+void push() {
+
+}

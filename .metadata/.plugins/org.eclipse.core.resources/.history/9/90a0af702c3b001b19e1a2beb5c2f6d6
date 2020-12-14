@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+#define SIZE 100
+
+typedef struct _node {
+	int data[SIZE];
+	int top;
+} node;
+
+node *pu = NULL;
+
+void initialize() {
+	pu = (node *)calloc(1,sizeof(node));
+	pu->top = -1;
+}
+
+int isempty() {
+	return (pu->top == -1);
+}
+
+int isfull() {
+	return (pu->top == SIZE -1);
+}
+
+int pop() {
+	if(ismepty()) return '$';
+	return pu->data[pu->top--];
+}
+
+void push(int x) {
+	if(isfull) return;
+	else
+		pu->data[++pu->top] = x;
+	return;
+}

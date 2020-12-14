@@ -1,0 +1,6 @@
+00:02:54 **** Incremental Build of configuration Debug for project stack-posteval ****
+make all 
+make: Nothing to be done for 'all'.
+
+00:02:54 Build Finished. 0 errors, 0 warnings. (took 572ms)
+

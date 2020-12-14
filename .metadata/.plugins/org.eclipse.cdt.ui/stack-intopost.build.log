@@ -1,0 +1,6 @@
+00:48:09 **** Incremental Build of configuration Debug for project stack-intopost ****
+make all 
+make: Nothing to be done for 'all'.
+
+00:48:10 Build Finished. 0 errors, 0 warnings. (took 471ms)
+

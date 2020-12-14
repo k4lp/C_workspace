@@ -1,0 +1,81 @@
+/*
+ * main.c
+ *
+ *  Created on: 21-Nov-2020
+ *      Author: kalp
+ */
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct _node {
+	int id;
+	char name[20];
+	int jday,jmonth,jyear;
+	int plan;//in months
+	struct _node *next;
+	struct _node *prev;
+} node;
+
+node *head , *tail;
+
+void create() {
+	if(head == NULL) {
+		node *temp = (node *)malloc(sizeof(node));
+		printf("\nEnter the Customer ID :- ");
+		scanf(" %d", &temp->id);
+		printf("\nEnter the Name :- ");
+		scanf(" %[^\n]",temp->name);
+		printf("\nEnter the joining date in DD/MM/YYYY format :- ");
+		scanf(" %d/%d/%d",&temp->jday,&temp->jmonth,&temp->jyear);
+		printf("\nEnter the validity in months :- ");
+		scanf(" %d",&temp->plan);
+		temp->next = NULL;
+		temp->prev = NULL;
+		head = temp;
+	}
+	else {
+		node *temp = (node *)malloc(sizeof(node));
+		printf("\nEnter the Customer ID :- ");
+		scanf(" %d", &temp->id);
+		printf("\nEnter the Name :- ");
+		scanf(" %[^\n]",temp->name);
+		printf("\nEnter the joining date in DD/MM/YYYY format :- ");
+		scanf(" %d/%d/%d",&temp->jday,&temp->jmonth,&temp->jyear);
+		printf("\nEnter the validity in months :- ");
+		scanf(" %d",&temp->plan);
+		node *ptr = head;
+		while(ptr->next != NULL && temp->id > ptr->next->id) {
+			ptr = ptr->next;
+		}
+		node *ptr1 = ptr->next;
+		temp->next = ptr1;
+		temp->prev = ptr;
+		ptr->next = temp;
+		ptr1->prev =  temp;
+	}
+}
+
+void display() {
+	if(head == NULL) {
+		printf("\nList is empty. Create one first.");
+		return;
+	}
+	else {
+		node *ptr = head;
+		while(ptr->next !=NULL) {
+			printf("\n ID = %d\n Name = %s\nJoining date = %d/%d/%d\nPlan validity = %d month(s)",ptr->id,ptr->name,ptr->jday,ptr->jmonth,ptr->jyear,ptr->plan);
+			ptr=ptr->next;
+		}
+		printf("\n ID = %d\n Name = %s\nJoining date = %d/%d/%d\nPlan validity = %d month(s)",ptr->id,ptr->name,ptr->jday,ptr->jmonth,ptr->jyear,ptr->plan);
+	}
+}
+
+int main() {
+	create();
+	create();
+	display();
+	create();
+	display();
+	printf("\nOkay");
+	return 0;
+}

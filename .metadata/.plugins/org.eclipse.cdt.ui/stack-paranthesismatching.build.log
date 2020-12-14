@@ -1,0 +1,6 @@
+02:23:45 **** Incremental Build of configuration Debug for project stack-paranthesismatching ****
+make all 
+make: Nothing to be done for 'all'.
+
+02:23:46 Build Finished. 0 errors, 0 warnings. (took 517ms)
+
