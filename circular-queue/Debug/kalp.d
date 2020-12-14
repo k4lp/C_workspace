@@ -1,0 +1,1 @@
+kalp.o: ../kalp.c
