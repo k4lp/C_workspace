@@ -30,8 +30,10 @@ int isempty() {
 }
 
 int dequeue() {
-	if(isempty())
+	if(isempty()) {
+		printf("\nQueue is empty.");
 		return -1;
+	}
 	else
 		return pu->q[++pu->front];
 }
@@ -46,8 +48,10 @@ void display() {
 }
 
 void enqueue(int x) {
-	if(isfull())
+	if(isfull()) {
+		printf("\nQueue is full.");
 		return;
+	}
 	else {
 		pu->q[++pu->rear]= x;
 	}
@@ -61,5 +65,7 @@ int main() {
 	display();
 	dequeue();
 	display();
+	dequeue();
+	dequeue();
 	return 0;
 }
