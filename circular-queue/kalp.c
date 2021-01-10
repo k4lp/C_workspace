@@ -5,6 +5,18 @@ typedef struct _node {
 	int size,front,rear,*q;
 } node;
 
+//(rear+1)%size -> rear - 1
+/*
+0-7
+rear = 6
+(7%8) = 0 -> rear one step ahead
+if front == 0
+then rear is behind the front and rear pointer cannot move ahead because queue is full.
+to check if full , front = (rear+1)%size == true
+to check if empty, front = rear == true
+
+*/
+
 node *pu;
 
 void initialize() {
@@ -30,6 +42,8 @@ void enqueue(int x) {
 		return;
 	else {
 		pu->q[pu->rear=(pu->rear +1) % pu->size] = x;
+		//rear is first incremented by one step then value is added
+		//front pointer doesn't contain any value
 	}
 }
 
